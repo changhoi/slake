@@ -1,0 +1,21 @@
+services:
+  app:
+    container_name: "app"
+    build:
+      context: ..
+      dockerfile: .meta/local.Dockerfile
+    volumes:
+      - ..:/home/app
+    env_file:
+      - .env
+      - .env.${PROFILE}
+    ports:
+      - "8080:8080"
+      - "3025:3025"
+  postgres:
+    container_name: "postgres"
+    image: "postgres:17-alpine"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres

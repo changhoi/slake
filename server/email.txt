@@ -1,0 +1,5 @@
+Subject: 테스트 이메일
+From: sender@example.com
+To: recipient@localhost
+
+이것은 curl로 보낸 테스트 이메일입니다.
