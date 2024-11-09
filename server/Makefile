@@ -19,3 +19,14 @@ down:
 .PHONY: dev-run
 dev-run:
 	go run cmd/app/main.go
+
+.PHONY: build
+build:
+	go build -o bin/app cmd/app/main.go
+
+.PHONY: run
+run:
+	./bin/app
+
+.PHONY: deploy
+bin-deploy: build run
